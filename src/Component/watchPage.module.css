@@ -1,0 +1,110 @@
+.body {
+    background-color: rgb(66, 64, 64);
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+    font-family: monospace;
+}
+
+.timeHead{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.boldCnt{
+    color: rgb(66, 178, 10);
+    font-weight: bolder;
+}
+
+.textBox {
+    background-color: rgb(38, 38, 38);
+    color: rgb(111, 110, 109);
+    margin: 2% 0;
+    width: 90%;
+    margin-left: 5%;
+    padding: 1.5rem;
+    border-radius: 15px;
+    height: 12.3em; /* 4 lines * 1.8 line height */
+    overflow-y: hidden;
+    line-height: 2.2em;
+    font-size: 2rem;
+    white-space: pre-wrap;
+    scroll-behavior: smooth;
+    font-family: monospace;
+    position: relative;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: rgb(100, 46, 46);
+    padding: 4rem;
+    font-size: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 600px;
+    line-height: 2.1rem;
+    width: 80%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.modalContent h2 {
+    margin-bottom: 1rem;
+}
+
+.char {
+    font-size: 1.5rem;
+    white-space: pre-wrap;
+}
+
+.correct {
+    color: rgb(0, 177, 0);
+    font-style: italic;
+}
+
+.incorrect {
+    color: rgb(205, 3, 3);
+}
+
+.cursor {
+    border-left: 2px solid rgb(193, 154, 0);
+    animation: blink 1s step-end infinite;
+    padding-left: 1px;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.hiddenInput {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.resetBtn {
+    background-color: rgb(29, 4, 86);
+    color: greenyellow;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-self: center;
+    border: 0.01rem solid red;
+}

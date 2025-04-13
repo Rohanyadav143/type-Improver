@@ -1,0 +1,14 @@
+.mainBox{
+    background-color: rgb(51, 50, 50) !important;
+    min-width: 100%;
+}
+
+.navbarMainDiv{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: antiquewhite;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}

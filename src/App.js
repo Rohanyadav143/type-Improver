@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Component/navbar';
+import ImgBody from './Component/imgBody';
+import TypingBody from './Component/typingBody';
+import ContentBody from './Component/contentBody';
+import Footer from './Component/footer';
+import { useRef } from 'react';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function App() {
+
+  const typingRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollToTests && typingRef.current) {
+      typingRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <>
+        <Navbar typingRef={typingRef} />
+        <ImgBody/>
+        <div ref={typingRef}>
+          <TypingBody />
+        </div>
+        <ContentBody/>
+        <Footer/>
+      </>
     </div>
   );
 }

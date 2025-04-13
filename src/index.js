@@ -7,10 +7,10 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import TypingBody from './Component/typingBody';
 import Error404 from './Component/errorPage';
 import ListenPage from './Component/listenPage';
 import WatchPage from './Component/watchPage';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -35,7 +35,9 @@ let allRouts = createBrowserRouter([
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={allRouts}/>
+     <Router basename="/type-Improver">
+      <RouterProvider router={allRouts} />
+    </Router>
   </React.StrictMode>
 );
 

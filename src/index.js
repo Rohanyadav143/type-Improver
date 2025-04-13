@@ -6,14 +6,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import reportWebVitals from './reportWebVitals';
-import { HashRouter as Router } from 'react-router-dom'; // Import HashRouter
+import { HashRouter as Router } from 'react-router-dom'; // Use HashRouter here
 import Error404 from './Component/errorPage';
 import ListenPage from './Component/listenPage';
 import WatchPage from './Component/watchPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let allRouts = [
+// Define your routes
+let allRoutes = [
   {
     path: '/',
     element: <App />
@@ -36,7 +37,7 @@ root.render(
   <React.StrictMode>
     {/* Wrap the Router with HashRouter */}
     <Router basename="/type-Improver">
-      <RouterProvider router={allRouts} />
+      <RouterProvider router={allRoutes} />
     </Router>
   </React.StrictMode>
 );

@@ -10,34 +10,33 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Error404 from './Component/errorPage';
 import ListenPage from './Component/listenPage';
 import WatchPage from './Component/watchPage';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+// Define the router with basename
 let allRouts = createBrowserRouter([
   {
-    path:'/',
-    element:<App/>
+    path: '/',
+    element: <App />
   },
   {
-    path:'/listenPage',
-    element:<ListenPage/>
+    path: '/listenPage',
+    element: <ListenPage />
   },
   {
-    path:'/watchPage',
-    element:<WatchPage/>
+    path: '/watchPage',
+    element: <WatchPage />
   },
   {
-    path:'*',
-    element:<Error404/>
+    path: '*',
+    element: <Error404 />
   }
-  ])
+]);
 
 root.render(
   <React.StrictMode>
-     <Router basename="/type-Improver">
-      <RouterProvider router={allRouts} />
-    </Router>
+    {/* Set the basename to match your GitHub Pages deployment */}
+    <RouterProvider router={allRouts} />
   </React.StrictMode>
 );
 

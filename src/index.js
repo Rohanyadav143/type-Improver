@@ -6,15 +6,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom'; // Import HashRouter
 import Error404 from './Component/errorPage';
 import ListenPage from './Component/listenPage';
 import WatchPage from './Component/watchPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// Define the router with basename
-let allRouts = createBrowserRouter([
+let allRouts = [
   {
     path: '/',
     element: <App />
@@ -31,12 +30,14 @@ let allRouts = createBrowserRouter([
     path: '*',
     element: <Error404 />
   }
-]);
+];
 
 root.render(
   <React.StrictMode>
-    {/* Set the basename to match your GitHub Pages deployment */}
-    <RouterProvider router={allRouts} />
+    {/* Wrap the Router with HashRouter */}
+    <Router basename="/type-Improver">
+      <RouterProvider router={allRouts} />
+    </Router>
   </React.StrictMode>
 );
 

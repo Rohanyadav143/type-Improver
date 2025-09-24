@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './navbar';
 import Footer from './footer';
+import { FaStar, FaRocket, FaThumbsUp } from "react-icons/fa";
 
 function WatchPage() {
     const location = useLocation();
@@ -190,11 +191,11 @@ function WatchPage() {
             {showModal && (
                 <div className={styles.modalOverlay}>
                     <div className={styles.modalContent}>
-                        <h2>Time's Up!</h2>
-                        <p><b>Correct Characters : </b> {correctChars}</p>
-                        <p><b>Incorrect Characters : </b> {incorrectChars}</p>
+                        <h2>Time's Up! <FaStar className="icon" /></h2>
+                        <p><b>Correct Characters : </b> {correctChars} <FaThumbsUp style={{color:"yellow"}}/></p>
+                        <p><b>Incorrect Characters : </b> {incorrectChars} <FaRocket style={{color:"aqua"}}/></p>
                         <p><strong>WPM : </strong> {getWPM()}</p>
-                        <p>Accuracy : {accuracy}</p>
+                        <p>Accuracy : {accuracy}%</p>
                         <button onClick={resetAll} className={styles.resetBtn}>Try Again</button>
                     </div>
                 </div>

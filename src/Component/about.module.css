@@ -1,0 +1,213 @@
+/* Container */
+.aboutContainer {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #eee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hero Section */
+.heroSection {
+  padding: 80px 20px 40px;
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: 36px;
+  color: #00ff88;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #00ff88;
+}
+
+.paraImp {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* Section Box */
+.sectionBox {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 900px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  color: #ffd700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sectionBox p {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* Features Grid */
+.featuresGrid {
+  width: 70%;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin: 40px 20px;
+}
+
+.featureCard {
+  background: #222;
+  padding: 30px;
+  border-radius: 14px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.featureCard:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0px 6px 20px rgba(0, 255, 136, 0.4);
+}
+
+.featureIcon {
+  font-size: 42px;
+  color: #00ff88;
+  margin-bottom: 12px;
+  text-shadow: 0 0 10px #00ff88;
+}
+
+.featureCard h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ffd700;
+}
+
+.featureCard p {
+  font-size: 17px;
+  color: #ccc;
+}
+
+/* Why Choose Us */
+.listPoints {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.listPoints li {
+  font-size: 16px;
+  margin: 8px 0;
+  color: #eee;
+  position: relative;
+  padding-left: 22px;
+}
+
+.listPoints li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00ff88;
+  font-weight: bold;
+}
+
+/* Quote */
+.quote {
+  margin: 40px 20px;
+  text-align: center;
+  font-size: 22px;
+  font-style: italic;
+  color: #ffd700;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+  animation: glow 2s infinite alternate;
+}
+
+/* Creator Section */
+.creatorSection {
+  margin: 50px auto 0;
+  padding: 50px 20px 30px;
+  max-width: 950px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.08), rgba(0, 255, 200, 0.05));
+  border-top: 2px solid rgba(0, 255, 136, 0.3);
+  border-radius: 14px 14px 0 0;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.creatorSection h3 {
+  color: #00ffcc;
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.creatorBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.creatorImg {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #00ff88;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+  object-fit: cover;
+}
+
+.creatorBox h4 {
+  margin: 0 0 10px 0;
+  color: #ffd700;
+  font-size: 20px;
+}
+
+.creatorBox p {
+  color: #ddd;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ffd700; }
+  to { text-shadow: 0 0 20px #ffea00, 0 0 30px #ffea00; }
+}
+
+/* Navbar & Footer Fix */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .featuresGrid {
+    width: 90%;
+  }
+
+  .creatorBox {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

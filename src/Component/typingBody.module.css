@@ -1,152 +1,308 @@
-.firstBox{
-    background-color: rgb(58, 115, 116);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7vw;
-    padding-top: 50px;
-    padding-bottom: 50px;
+/* ---------- Full Page Container ---------- */
+.mainBox {
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 20px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, rgba(176,176,176,0.7), rgba(175,171,165,0.7), rgba(149,142,124,0.7), rgba(133,109,155,0.7));
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  overflow-x: hidden;
 }
 
-.box1{
-    height: 700px !important;
-    border-radius: 5px;
-    transition: 0.3s;
-    background-color: rgb(96, 167, 174);
-    box-shadow: 5px 5px 15px rgba(188, 186, 186, 0.8);
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.box2{
-    height: 700px !important;
-    border-radius: 5px;
-    transition: 0.3s;
-    background-color: rgb(96, 167, 174);
-    box-shadow: 5px 5px 15px rgba(188, 186, 186, 0.8);
+/* ---------- Floating Icons ---------- */
+.floatingIcon {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.2;
+  animation: float 10s infinite ease-in-out alternate;
+}
+.floatingIcon1 { top: 10%; left: 5%; animation-delay: 0s; }
+.floatingIcon2 { top: 50%; left: 80%; animation-delay: 2s; }
+.floatingIcon3 { bottom: 15%; left: 30%; animation-delay: 4s; }
+.floatingIcon4 { top: 25%; left: 60%; animation-delay: 6s; }
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(15deg); }
+  100% { transform: translateY(0) rotate(-15deg); }
 }
 
+/* ---------- Page Heading ---------- */
+.introBox {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.introBox h1 {
+  font-size: 3rem;
+  color: #b200bb;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2), -2px -2px 5px rgba(255,206,0,0.3);
+  animation: fadeInDown 1s ease forwards;
+}
+.introBox p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: auto;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* ---------- Cards Container ---------- */
+.firstBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+/* ---------- Test Card (Transparent Version) ---------- */
+.testCard {
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* optional border for definition */
+  backdrop-filter: blur(10px); /* adds glass-like blur effect */
+  border-radius: 30px;
+  width: 48%;
+  padding: 40px 30px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s, box-shadow 0.5s;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes cardBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.testCard::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: rgba(47, 46, 45, 0.05);
+  top: -50%;
+  left: -50%;
+  transform: rotate(45deg);
+}
+.testCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.35);
+}
+
+.cardIcon {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.15;
+  top: 10px;
+  right: 15px;
+  animation: rotateIcon 12s linear infinite, floatIcon 5s infinite ease-in-out alternate;
+}
+@keyframes rotateIcon {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes floatIcon {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.1; }
+  50% { transform: translateY(-10px) rotate(10deg); opacity: 0.2; }
+  100% { transform: translateY(0) rotate(0deg); opacity: 0.1; }
+}
+
+/* ---------- Card Heading ---------- */
+.headBody {
+  font-weight: 800;
+  font-size: 2rem;
+  color: #e63946;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 6px rgba(230,57,70,0.7), -2px -2px 6px rgba(255,206,0,0.6);
+  animation: fadeInDown 0.8s ease;
+}
+
+/* ---------- Card Image ---------- */
+.cardImage {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+.cardImage:hover {
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 15px 40px rgba(255,200,0,0.5), 0 0 20px rgba(230,57,70,0.3);
+}
+
+/* ---------- Card Text ---------- */
+.para {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 25px;
+  animation: fadeIn 1s ease;
+}
+
+/* ---------- Select Test Button ---------- */
+.selectBtn {
+  background: linear-gradient(90deg, #9f6722, #38427b);
+  border: none;
+  padding: 15px;
+  font-weight: 700;
+  border-radius: 25px;
+  cursor: pointer;
+  color: #fcfcfc;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
+  width: 200px !important;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  padding-right: 40px !important;
+}
+.selectBtn::after {
+  content: '➡️';
+  position: absolute;
+  right: 25px;
+  top: 28%;
+  transition: transform 0.3s;
+}
+.selectBtn:hover::after {  
+    transform: translate(10px);
+ }
+.selectBtn:hover { box-shadow: 0 15px 40px rgba(255,140,0,0.5); }
+
+/* ---------- Modal Overlay ---------- */
 .modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
+/* ---------- Modal Content ---------- */
 .modalContent {
-    background: rgb(51, 51, 51);
-    padding: 20px;
-    border-radius: 8px;
-    width: 30%;
-    height: 95%;
-    margin-left: 10px;
-    margin-right: 10px;
-    min-width: 280px;
-    text-align: center;
-    position: relative;
+  background: linear-gradient(145deg, #58a1a0, #2c436a);
+  padding: 30px;
+  border-radius: 25px;
+  width: 400px;
+  max-width: 90%;
+  height: 600px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+  animation: bounceIn 0.6s ease forwards;
+}
+@keyframes bounceIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  80% { transform: scale(0.98); }
+  100% { transform: scale(1); }
 }
 
+/* ---------- Close Button ---------- */
 .closeButton {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: rgb(206, 117, 0);
-    transition: 0.1s ease-in;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
 }
 
-.closeButton:hover{
-    color: rgb(255, 0, 0);
-    transform: scale(1.1);
+/* ---------- Test Form ---------- */
+.testForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.headingOne, .headingTwo {
+  color: #000000;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
+}
+.imageStyle {
+  width: 230px;
+  height: 180px;
+  margin-top: -15px;
+  transition: transform 0.3s;
+}
+.imageStyle:hover {
+  transform: rotate(15deg) scale(1.05);
+}
+.selectBox {
+  width: 85%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.selectBox:focus {
+  outline: none;
+  box-shadow: 0 0 15px #ffd700;
+}
+.gradientSelect {
+  background: linear-gradient(90deg, #6dbd3c, #7d6b6b);
+  color: #ffffff;
+  background-color: #2a2929;
+}
+.ctaButton {
+  background: linear-gradient(90deg, #cac8c8, #000000);
+  border: none;
+  padding: 14px 30px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-top: 10px;
+}
+.ctaButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
 
-.selectBtn{
-    font-weight: bold !important;
-    display: flex !important;
-    place-self: center;
-    margin-top: 20px !important;
+/* ---------- Animations ---------- */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-.smoothImage {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 1024px) {
+  .testCard { width: 350px; padding: 30px 20px; }
+  .headBody { font-size: 1.8rem; }
 }
 
-.imgBox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    padding: 10px;
-}
-
-.headBody{
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    padding-top: 3%;
-    color: rgb(191, 7, 7);
-    font-style:oblique;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.para{
-    color: rgb(255, 255, 255);
-    padding: 3%;
-    font-size: 20px;
-}
-
-.headingOne{
-    color: rgb(184, 181, 2);
-    padding-top: 10%;
-    font-weight: bold;
-    font-style: oblique;
-}
-
-.headingTwo{
-    color: rgb(20, 196, 0);
-    padding-top: 5%;
-    font-weight: bold;
-    font-style: oblique;
-    padding-bottom: 5%;
-}
-
-.imageStyle{
-    height: 170px !important;
-    width: 85% !important;
-    margin-top: 5%;
-    margin-bottom: 2%;
-    border-radius: 10px !important;
-}
-
-.time{
-    display: flex;
-    text-align: center;
-    place-self: center;
-    width: 70%;
-    min-width: 250px;
-    background-color: black;
-    color: rgb(169, 171, 172);
-    cursor: pointer;
-    height: 50px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 25px;
-}
-
-.btnStart{
-    font-size: 20px !important;
-    font-weight: bold !important;
-    color: rgb(213, 213, 213) !important;
-    width: 40% !important;
+@media screen and (max-width: 768px) {
+  .firstBox { flex-direction: column; align-items: center; }
+  .testCard { width: 90%; padding: 30px 20px; }
+  .introBox h1 { font-size: 2.5rem; }
+  .introBox p { font-size: 1.1rem; }
 }

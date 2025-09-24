@@ -1,15 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import reportWebVitals from './reportWebVitals';
-import { createHashRouter, RouterProvider } from 'react-router-dom';
+
+// ✅ Import router functions
+import {
+  createHashRouter,
+  RouterProvider,
+} from 'react-router-dom';
+
+// ✅ Import all your pages/components
 import Error404 from './Component/errorPage';
 import ListenPage from './Component/listenPage';
 import WatchPage from './Component/watchPage';
+import AboutPage from './Component/aboutPage';
+import ContactPage from './Component/contactPage';
 
 const router = createHashRouter([
   {
@@ -23,6 +31,14 @@ const router = createHashRouter([
   {
     path: '/watchPage',
     element: <WatchPage />
+  },
+  {
+    path: '/about',
+    element: <AboutPage />
+  },
+  {
+    path: '/contact',
+    element: <ContactPage />
   },
   {
     path: '*',
